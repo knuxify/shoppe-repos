@@ -1,0 +1,33 @@
+## shoppe package
+
+# Basic information
+name="shoppe" # Name of the package. This should be lowercase unless it's uppercase in most repos.
+desc="A package manager frontend/replacement" # Short description of the package. Make sure it doesn't end with a dot (stylistic choice).
+version="v0.1" # Package version. For packages being built from a repo, this should be set to "rolling".
+revision="1" # Package revision. This can be used to update a package without waiting for the next software release.
+license="GPL 3-Clause" # License. This is required.
+website="https://github.com/knuxfanwin8/shoppe" # Project website. Optional. If this is an open-source project, link the source page.
+
+# Building/installation instructions
+source="https://github.com/knuxfanwin8/shoppe" # Source link.
+sourcetype="git-tag" # Source type, defines how to get the source.
+# The source can be one of the following:
+# git - git repository (clone with git, wget fallback) (optional: a commit variable)
+# git-tag - github tag (clone with git, wget fallback) (requires tag variable)
+# compressed - tarball (download with wget)
+# You can also define a fallback source by prefixing the variables with "fallback", for example "fallbacksource" and "fallbacksourcetype".
+tag="$version"
+
+# Building. This is required, unless your package only requires an install.
+shoppebuild() {
+	getpkg # This automatically gets the package.
+	cd "$name"
+	# Building commands go here...
+}
+# Installing. This is required.
+shoppeinstall() {
+	getpkg
+	cd "$name"
+	# Installation commands go here...
+	sudo make install
+}
