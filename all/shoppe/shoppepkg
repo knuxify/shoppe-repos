@@ -12,19 +12,23 @@ website="https://github.com/knuxfanwin8/shoppe" # Project website. Optional. If 
 source="https://github.com/knuxfanwin8/shoppe" # Source link.
 sourcetype="git-tag" # Source type, defines how to get the source.
 # The source can be one of the following:
-# git - git repository (clone with git, wget fallback) (optional: a commit variable)
-# git-tag - github tag (clone with git, wget fallback) (requires tag variable)
+# git - git repository (clone with git) (optional: a commit variable)
+# git-tag - github tag (clone with git) (requires tag variable, can also be used for getting certain branches)
 # compressed - tarball (download with wget)
 # You can also define a fallback source by prefixing the variables with "fallback", for example "fallbacksource" and "fallbacksourcetype".
 tag="$version"
 
-# Building. This is required, unless your package only requires an install.
-shoppebuild() {
-	getpkg # This automatically gets the package.
-	cd "$name"
-	# Building commands go here...
-}
-# Installing. This is required.
+# Building. This is required, unless your package only requires an install, in which case you can remove it. In this case, it is not required, so it is commented out.
+#shoppebuild() {
+#	getpkg # This automatically gets the package.
+#	cd "$name"
+#	# Building commands go here...
+#	cd ../
+#}
+
+# Also, if you already get the package in shoppebuild, you don't have to redownload it in shoppeinstall.
+
+# Installation. This is required.
 shoppeinstall() {
 	getpkg
 	cd "$name"
