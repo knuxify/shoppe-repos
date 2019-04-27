@@ -1,0 +1,19 @@
+## shoppe package
+
+# Basic information
+name="boredbutton-git"
+desc="The ultimate anti-boredom utility"
+version="rolling"
+revision="1"
+license="GPL 3-Clause"
+website="https://github.com/knuxify/boredbutton"
+
+# Building/installation instructions
+source="https://github.com/knuxify/boredbutton"
+sourcetype="git"
+
+shoppeinstall() {
+	getpkg
+	cd "$name"
+	sudo make install && success
+}
