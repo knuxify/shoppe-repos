@@ -6,10 +6,10 @@ desc="A package manager frontend/replacement" # Short description of the package
 version="v0.1" # Package version. For packages being built from a repo, this should be set to "rolling".
 revision="1" # Package revision. This can be used to update a package without waiting for the next software release.
 license="GPL 3-Clause" # License. This is required.
-website="https://github.com/knuxfanwin8/shoppe" # Project website. Optional. If this is an open-source project, link the source page.
+website="https://github.com/knuxify/shoppe" # Project website. Optional. If this is an open-source project, link the source page.
 
 # Building/installation instructions
-source="https://github.com/knuxfanwin8/shoppe" # Source link.
+source="https://github.com/knuxify/shoppe" # Source link.
 sourcetype="git-tag" # Source type, defines how to get the source.
 # The source can be one of the following:
 # git - git repository (clone with git) (optional: a commit variable)
@@ -33,5 +33,5 @@ shoppeinstall() {
 	getpkg
 	cd "$name"
 	# Installation commands go here...
-	sudo make install
+	sudo make install && success
 }
