@@ -16,5 +16,5 @@ shoppeinstall() {
 	getpkg
 	mkdir content
 	cd "$name"
-	DESTDIR=../content sudo make install && success
+	DESTDIR=../content make install && success
 }
