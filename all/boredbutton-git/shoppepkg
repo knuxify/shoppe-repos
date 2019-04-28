@@ -14,6 +14,7 @@ sourcetype="git"
 
 shoppeinstall() {
 	getpkg
+	mkdir content
 	cd "$name"
-	sudo make install && success
+	DESTDIR=../content sudo make install && success
 }
