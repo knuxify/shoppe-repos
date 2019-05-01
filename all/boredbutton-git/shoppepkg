@@ -4,7 +4,7 @@
 name="boredbutton-git"
 desc="The ultimate anti-boredom utility"
 version="rolling"
-revision="1"
+numericver="rolling"
 license="GPL 3-Clause"
 website="https://github.com/knuxify/boredbutton"
 

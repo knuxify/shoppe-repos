@@ -4,7 +4,7 @@
 name="shoppe" # Name of the package. This should be lowercase unless it's uppercase in most repos.
 desc="A package manager frontend/replacement" # Short description of the package. Make sure it doesn't end with a dot (stylistic choice).
 version="v0.1" # Package version. For packages being built from a repo, this should be set to "rolling".
-revision="1" # Package revision. This can be used to update a package without waiting for the next software release.
+numericver="1" # Package revision. Bump this every time you change the package (eg. update to next version, fix some commands)
 license="GPL 3-Clause" # License. This is required.
 website="https://github.com/knuxify/shoppe" # Project website. Optional. If this is an open-source project, link the source page.
 
@@ -33,5 +33,5 @@ shoppeinstall() {
 	getpkg
 	cd "$name"
 	# Installation commands go here...
-	sudo make install && success
+	sudo make install && success --noexit
 }
