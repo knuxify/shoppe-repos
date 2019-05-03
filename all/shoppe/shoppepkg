@@ -7,6 +7,10 @@ version="v0.1" # Package version. For packages being built from the newest sourc
 numericver="1" # Package revision. Bump this every time you change the package (eg. update to next version, fix some commands). For packages being built from newest source, this should be set to "rolling".
 license="GPL 3-Clause" # License. This is required.
 website="https://github.com/knuxify/shoppe" # Project website. Optional. If this is an open-source project, link the source page.
+depends="bash git curl wget" # Dependencies, separated by spaces.
+# optional="" # Optional dependencies, separated by spaces.
+makedepends="make" # Build dependencies, separated by spaces.
+conflicts="shoppe-git" # Packages this package conflicts with, separated by spaces. Most of the time this will contain the rolling version of a package.
 
 # Building/installation instructions
 source="https://github.com/knuxify/shoppe" # Source link.

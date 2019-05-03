@@ -3,17 +3,19 @@
 # Basic information
 name="boredbutton-git"
 desc="The ultimate anti-boredom utility"
-version="rolling"
-numericver="rolling"
+version="2.0.1"
+numericver="1"
 license="GPL 3-Clause"
 website="https://github.com/knuxify/boredbutton"
 depends="bash"
 #optional="wget"
 makedepends="make"
 conflicts="boredbutton"
+
 # Building/installation instructions
 source="https://github.com/knuxify/boredbutton"
-sourcetype="git"
+sourcetype="git-tag"
+tag="$version"
 
 shoppeinstall() {
 	getpkg
