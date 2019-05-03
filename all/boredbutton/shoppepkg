@@ -1,7 +1,7 @@
 ## shoppe package
 
 # Basic information
-name="boredbutton-git"
+name="boredbutton"
 desc="The ultimate anti-boredom utility"
 version="2.0.1"
 numericver="1"
@@ -10,7 +10,7 @@ website="https://github.com/knuxify/boredbutton"
 depends="bash"
 #optional="wget"
 makedepends="make"
-conflicts="boredbutton"
+conflicts="boredbutton-git"
 
 # Building/installation instructions
 source="https://github.com/knuxify/boredbutton"
