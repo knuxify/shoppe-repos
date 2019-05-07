@@ -14,14 +14,14 @@ sourcetype="tar"
 
 shoppebuild() {
 	getpkg
-	cd "$name"
+	cd "$tmpdir/$name/$name"
 	mkdir build || exit 1
-	cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+	cmake -DCMAKE_INSTALL_PREFIX=/usr .
 	cmake --build .
 }
 
 shoppeinstall() {
-	cd "$name"
-	cmake --build "$name/build" --target install -- DESTDIR="../content"
+	cd "$tmpdir/$name/$name"
+	cmake --build "build" --target install -- DESTDIR="$tmpdir/content"
 	install -Dm644 "./LICENSE" "${DESTDIR}/usr/share/licenses/${name}/LICENSE"
 }
