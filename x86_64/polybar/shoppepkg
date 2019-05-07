@@ -9,9 +9,8 @@ optdepends="alsa-lib pulseaudio libmpdclient libnl wireless_tools jsoncpp i3-wm 
 makedepends="cmake git python python2 pkg-config"
 conflicts="polybar-git"
 
-# TODO: git-tag source?
 source="${website}/releases/download/${version}/polybar-${version}.tar"
-sourcetype="compressed"
+sourcetype="tar"
 
 shoppebuild() {
 	getpkg
@@ -23,6 +22,6 @@ shoppebuild() {
 
 shoppeinstall() {
 	cd "$name"
-	cmake --build "${name}/build" --target install -- DESTDIR="../content"
-	install -Dm644 "${name}/LICENSE" "${DESTDIR}/usr/share/licenses/${name}/LICENSE"
+	cmake --build "$name/build" --target install -- DESTDIR="../content"
+	install -Dm644 "./LICENSE" "${DESTDIR}/usr/share/licenses/${name}/LICENSE"
 }
