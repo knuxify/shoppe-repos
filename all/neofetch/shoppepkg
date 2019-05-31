@@ -11,6 +11,7 @@ depends="bash"
 #optional="wget"
 makedepends="make"
 conflicts="neofetch-git"
+archdependent="false"
 
 # Building/installation instructions
 source="https://github.com/dylanaraps/neofetch"
