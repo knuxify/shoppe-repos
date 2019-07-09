@@ -1,20 +1,20 @@
 ## shoppe package
 
 # Basic information
-pkgname="boredbutton-git"
-pkgdesc="The ultimate anti-boredom utility"
-pkgver="rolling"
-pkgarch="all"
-revision="rolling"
+name="neofetch-git"
+desc="A CLI system information tool written in BASH that supports displaying images"
+version="6.0.0"
+revision="1"
 license="GPL 3-Clause"
-website="https://github.com/knuxify/boredbutton"
+website="https://github.com/dylanaraps/neofetch"
 depends="bash"
 #optional="wget"
 makedepends="make"
-conflicts="boredbutton"
+conflicts="neofetch"
 archdependent="false"
+
 # Building/installation instructions
-source="https://github.com/knuxify/boredbutton"
+source="https://github.com/dylanaraps/neofetch"
 sourcetype="git"
 
 shoppeinstall() {
