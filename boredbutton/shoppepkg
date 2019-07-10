@@ -17,11 +17,11 @@ archdependent="false"
 # Building/installation instructions
 source="https://github.com/knuxify/boredbutton"
 sourcetype="git-tag"
-tag="$version"
+tag="$pkgver"
 
 shoppeinstall() {
 	getpkg
 	mkdir content
-	cd "$name"
-	DESTDIR=../content make install && success
+	cd "$pkgname"
+	DESTDIR=../content make install
 }

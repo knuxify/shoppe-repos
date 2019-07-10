@@ -28,7 +28,7 @@ tag="$version"
 # Building. This is required, unless your package only requires an install, in which case you can remove it. In this case, it is not required, so it is commented out.
 #shoppebuild() {
 #	getpkg # This automatically gets the package.
-#	cd "$name"
+#	cd "$pkgname"
 #	# Building commands go here...
 #	cd ../
 #}
@@ -38,7 +38,7 @@ tag="$version"
 # Installation. This is required.
 shoppeinstall() {
 	getpkg
-	cd "$name"
+	cd "$pkgname"
 	# Installation commands go here...
-	sudo make install && success --noexit
+	sudo make install
 }

@@ -20,6 +20,6 @@ sourcetype="git"
 shoppeinstall() {
 	getpkg
 	mkdir content
-	cd "$name"
-	DESTDIR=../content make install && success
+	cd "$pkgname"
+	DESTDIR=../content make install
 }
