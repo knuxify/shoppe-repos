@@ -18,10 +18,11 @@ archdependent="false"
 source="https://github.com/knuxify/boredbutton"
 sourcetype="git-tag"
 tag="$pkgver"
+sha512sum="f3589e99620a55290c1a1b4c5cbc9fbecbcdd46cb5df42b65a66b181eba22bce4cc2f7be36feff389bbad7941a228dd017bf40fe6c0599fad13ecb61e5cea205  content.tar.gz"
 
 shoppeinstall() {
-	getpkg
+	get_source
 	mkdir content
-	cd "$pkgname"
+	cd "source"
 	DESTDIR=../content make install
 }
