@@ -20,6 +20,6 @@ sourcetype="git"
 shoppeinstall() {
 	get_source
 	mkdir content
-	cd "$pkgname"
+	cd "source"
 	DESTDIR=../content make install
 }
