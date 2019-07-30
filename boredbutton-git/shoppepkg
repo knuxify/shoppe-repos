@@ -18,7 +18,7 @@ source="https://github.com/knuxify/boredbutton"
 sourcetype="git"
 
 shoppeinstall() {
-	getpkg
+	get_source
 	mkdir content
 	cd "$pkgname"
 	DESTDIR=../content make install
