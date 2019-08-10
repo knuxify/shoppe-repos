@@ -1,0 +1,25 @@
+pkgname=polybar
+pkgver=3.4.0
+pkgrel=2
+pkgdesc="A fast and easy-to-use status bar"
+arch="i686 x86_64"
+website="https://github.com/polybar/polybar"
+license="MIT"
+depends="cairo xcb-util-image xcb-util-wm xcb-util-xrm xcb-util-cursor alsa-lib libpulse libmpdclient libnl jsoncpp curl"
+optdepends="i3-wm ttf-unifont siji-git xorg-fonts-mics"
+makedepends="cmake git python python2 pkg-config i3-wm"
+conflicts="polybar-git"
+source="${url}/releases/download/${pkgver}/polybar-${pkgver}.tar"
+sourcetype="compressed"
+
+# PKGBUILD compatibility
+pkgdir="$tmpdir/$package/content"
+
+shoppebuild() {
+  mkdir -p "${pkgname}/build"
+  cd "${pkgname}/build" || exit 1
+  cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+  cmake --build .
+  cmake --build "${pkgname}/build" --target install -- DESTDIR="${pkgdir}"
+  install -Dm644 "${pkgname}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
