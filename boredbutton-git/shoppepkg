@@ -17,7 +17,7 @@ archdependent="false"
 source="https://github.com/knuxify/boredbutton"
 sourcetype="git"
 
-shoppeinstall() {
+shoppebuild() {
 	get_source
 	mkdir content
 	cd "source"
