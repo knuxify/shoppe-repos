@@ -1,15 +1,15 @@
 ## shoppe package
 
 # Basic information
-pkgname="shoppe-rewrite"
+pkgname="shoppe"
 pkgdesc="A portable package manager that integrates with most distros"
 pkgver="1.0.0"
 pkgarch="all"
-revision="1"
+pkgrel="1"
 license="MIT"
 website="https://github.com/shoppepm/shoppe"
 depends="bash"
-optional="wget git"
+optdepends="wget git"
 makedepends="make"
 conflicts="shoppe-git shoppe"
 archdependent="false"
@@ -24,5 +24,6 @@ shoppebuild() {
 	cd $pkgname
 	cp shoppe /usr/bin/
 	chmod +x /usr/bin/shoppe
-	# todo: copy docs and licence
+	mkdir -p /usr/share/doc/shoppe
+	cp -r docs /usr/share/doc/shoppe
 }
