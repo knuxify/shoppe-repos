@@ -1,0 +1,27 @@
+pkgname="magiccap-develop"
+pkgdesc="An image/GIF capture suite for Mac and Linux"
+pkgver="v2.0.0b10"
+pkgarch="all"
+pkgrel="0"
+license="MPL 2.0"
+url="https://github.com/MagicCap/MagicCap/"
+#depends="nodejs npm"
+makedepends="nodejs npm"
+conflicts="magiccap"
+archdependent="false"
+website="$url"
+
+source="https://github.com/MagicCap/MagicCap/releases/download/$pkgver/magiccap-linux.zip"
+sourcetype="git-tag"
+tag="develop"
+
+builddir="$tmpdir/content"
+shoppebuild() {
+	get_source
+	mkdir content
+	cd "source"
+	# This is kind of a hacky solution but hey, it works.
+	mkdir -p "$builddir"/opt/MagicCap
+	mv . "$builddir"/opt/MagicCap
+	ln -s "$builddir"/opt/MagicCap "$builddir"/usr/bin/MagicCap
+}

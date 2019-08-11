@@ -1,0 +1,24 @@
+pkgname="magiccap-develop-git"
+pkgdesc="An image/GIF capture suite for Mac and Linux"
+pkgver="rolling"
+pkgarch="all"
+pkgrel="rolling"
+license="MPL 2.0"
+url="https://github.com/MagicCap/MagicCap/"
+#depends="nodejs npm"
+makedepends="nodejs npm"
+conflicts="magiccap"
+archdependent="false"
+website="$url"
+
+source="$url"
+sourcetype="git-tag"
+tag="develop"
+
+shoppebuild() {
+	get_source
+	mkdir content
+	cd "source"
+	npm i
+	npm run linuxcompile	
+}
