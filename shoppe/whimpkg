@@ -1,29 +1,29 @@
 ## shoppe package
 
 # Basic information
-pkgname="shoppe"
+pkgname="whim"
 pkgdesc="A portable package manager that integrates with most distros"
 pkgver="1.0.0"
 pkgarch="all"
 pkgrel="1"
 license="MIT"
-website="https://github.com/shoppepm/shoppe"
+website="https://github.com/whim-pm/whim"
 depends="bash"
 optdepends="wget git"
 makedepends="make"
-conflicts="shoppe-git shoppe"
+conflicts="whim-git"
 archdependent="false"
 
 # Building/installation instructions
-source="https://github.com/shoppepm/shoppe"
+source="$website"
 sourcetype="git"
 #tag="$pkgver"
 
-shoppebuild() {
+whimpkg_build() {
 	get_source
 	cd $pkgname
-	cp shoppe /usr/bin/
-	chmod +x /usr/bin/shoppe
-	mkdir -p /usr/share/doc/shoppe
-	cp -r docs /usr/share/doc/shoppe
+	cp whim /usr/bin/
+	chmod +x /usr/bin/whim
+	mkdir -p /usr/share/doc/whim
+	cp -r docs /usr/share/doc/whim
 }

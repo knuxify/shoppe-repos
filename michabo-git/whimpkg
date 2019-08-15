@@ -1,0 +1,24 @@
+pkgname="michabo-git"
+pkgdesc="Qt desktop client for Pleroma and Mastodon"
+pkgver="rolling"
+pkgarch="all"
+pkgrel="rolling"
+license="GPL 3-Clause"
+url="https://git.pleroma.social/kaniini/michabo"
+depends="qt5 libqt5websockets5 qtwebengine5-dev"
+optdepends="wget"
+makedepends="qtbase5-dev libqt5websockets5-dev qtwebengine5-dev"
+conflicts="michabo"
+
+# Building/installation instructions
+source="$url"
+sourcetype="git"
+
+whimpkg_build() {
+	get_source
+	mkdir content
+	cd "source"
+	qmake michabo.pro
+	make -j4
+	DESTDIR=../content make install
+}

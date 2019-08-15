@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+rm pkglist
+for dir in *; do
+	[[ ! -d "$dir" ]] && continue
+	[[ ! -e "$dir/shoppepkg" ]] && continue
+	[[ -e "ignore" ]] && grep "^$(basename dir)" ignore &>/dev/null && continue
+	source $dir/shoppepkg
+	echo "$pkgname $pkgrel $pkgver" >> pkglist
+done

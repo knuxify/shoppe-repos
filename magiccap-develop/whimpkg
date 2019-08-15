@@ -12,11 +12,10 @@ archdependent="false"
 website="$url"
 
 source="https://github.com/MagicCap/MagicCap/releases/download/$pkgver/magiccap-linux.zip"
-sourcetype="git-tag"
-tag="develop"
+sourcetype="compressed"
 
 builddir="$tmpdir/content"
-shoppebuild() {
+whimpkg_build() {
 	get_source
 	mkdir content
 	cd "source"
