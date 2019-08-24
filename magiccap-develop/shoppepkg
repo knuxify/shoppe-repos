@@ -15,7 +15,7 @@ source="https://github.com/MagicCap/MagicCap/releases/download/$pkgver/magiccap-
 sourcetype="compressed"
 
 builddir="$tmpdir/content"
-whimpkg_build() {
+shoppepkg_build() {
 	get_source
 	mkdir content
 	cd "source"

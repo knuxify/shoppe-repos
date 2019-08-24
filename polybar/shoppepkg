@@ -15,7 +15,7 @@ sourcetype="compressed"
 # PKGBUILD compatibility
 pkgdir="$tmpdir/$package/content"
 
-whimpkg_build() {
+shoppepkg_build() {
   mkdir -p "${pkgname}/build"
   cd "${pkgname}/build" || exit 1
   cmake -DCMAKE_INSTALL_PREFIX=/usr ..

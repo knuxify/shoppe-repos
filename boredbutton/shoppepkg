@@ -1,23 +1,25 @@
 ## shoppe package
 
 # Basic information
-pkgname="boredbutton-git"
+pkgname="boredbutton"
 pkgdesc="The ultimate anti-boredom utility"
-pkgver="rolling"
+pkgver="2.0.1"
 pkgarch="all"
-pkgrel="rolling"
+pkgrel="1"
 license="GPL 3-Clause"
 website="https://github.com/knuxify/boredbutton"
 depends="bash"
-#optdeps="wget"
+optdepends="wget"
 makedepends="make"
-conflicts="boredbutton"
+conflicts="boredbutton-git"
 archdependent="false"
+
 # Building/installation instructions
 source="https://github.com/knuxify/boredbutton"
-sourcetype="git"
-
-whimpkg_build() {
+sourcetype="git-tag"
+tag="$pkgver"
+sha512sum="89846c02550d2a1757218eab99fe68bfce5a590bcd17d472b615d8ecfed22c8515a68aa63f6c72e9e33ec3ba99d2011107c3f866d8f41065ec53bd934d7272b2  content.tar.gz"
+shoppepkg_build() {
 	get_source
 	mkdir content
 	cd "source"

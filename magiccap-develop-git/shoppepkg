@@ -15,7 +15,7 @@ source="$url"
 sourcetype="git-tag"
 tag="develop"
 
-whimpkg_build() {
+shoppepkg_build() {
 	get_source
 	mkdir content
 	cd "source"
