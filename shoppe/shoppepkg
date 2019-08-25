@@ -3,7 +3,7 @@
 # Basic information
 pkgname="shoppe"
 pkgdesc="A portable package manager that integrates with most distros"
-pkgver="1.0.0"
+pkgver="v1.0.0"
 pkgarch="all"
 pkgrel="1"
 license="MIT"
@@ -17,7 +17,7 @@ archdependent="false"
 # Building/installation instructions
 source="$website"
 sourcetype="git"
-#tag="$pkgver"
+tag="$pkgver"
 
 shoppepkg_build() {
 	get_source
