@@ -24,4 +24,4 @@ shoppepkg_build() {
 	cd "source"
 	DESTDIR=../content make install
 }
-content_x86_64_checksum='a0165cb182fd2f5d7c39706544aacd4d28d0bac444a604ae07df7052d473f8bce31e3ab350ab963ac1f771a9a1e20658c3075d6a7d75078dba33c698cd109ec4  content-x86_64.tar.gz'
+content_x86_64_checksum='0d7ec0d69d93d1bf767227bba622ccf3e2deb01df25a73f4e126e2a6624ed74c78833bd3bba93206d67816d9a4da06d5bd9f2f9317b6836a8b8ed51085a60e87  content-x86_64.tar.gz'
