@@ -3,9 +3,9 @@
 # Basic information
 pkgname="shoppe"
 pkgdesc="A portable package manager that integrates with most distros"
-pkgver="v1.0.0"
+pkgver="v1.1.0"
 pkgarch="all"
-pkgrel="1"
+pkgrel="0"
 license="MIT"
 website="https://github.com/shoppepm/shoppe"
 depends="bash"
@@ -19,11 +19,15 @@ source="$website"
 sourcetype="git"
 tag="$pkgver"
 
+contentdir="$tmpdir/shoppe/content"
+
 shoppepkg_build() {
 	get_source
 	cd $pkgname
-	cp shoppe /usr/bin/
-	chmod +x /usr/bin/shoppe
-	mkdir -p /usr/share/doc/shoppe
-	cp -r docs /usr/share/doc/shoppe
+	cp shoppe "$contentdir/usr/bin/"
+	chmod +x "$contentdir/usr/bin/shoppe"
+	cp shoppe-utils "$contentdir/usr/bin/"
+	chmod +x "$contentdir/usr/bin/shoppe-utils"
+	mkdir -p "$contentdir/usr/share/doc/shoppe"
+	cp -r docs "$contentdir/usr/share/doc/shoppe"
 }
