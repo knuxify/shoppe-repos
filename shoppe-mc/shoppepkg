@@ -1,18 +1,19 @@
 ## shoppe package
 
 # Basic information
-pkgname="shoppe"
-pkgdesc="A portable package manager that integrates with most distros"
-pkgver="v1.2.1"
+pkgname="shoppe-mc"
+pkgdesc="Shoppe from the master-candidate branch (latest test-passing commit from develop)"
+pkgver="rolling"
 pkgarch="all"
-pkgrel="0"
+pkgrel="rolling"
 license="MIT"
 url="https://github.com/shoppepm/shoppe"
 depends="bash wget git grep"
 #optdepends=""
 makedepends="make"
-provides="shoppe-mc shoppe-git"
+provides="shoppe shoppe-git"
 archdependent="false"
+nobuild="false"
 
 # Building/installation instructions
 source="$url"
