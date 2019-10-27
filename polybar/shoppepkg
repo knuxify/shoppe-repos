@@ -3,9 +3,9 @@ pkgver=3.4.0
 pkgrel=2
 pkgdesc="A fast and easy-to-use status bar"
 arch="i686 x86_64"
-website="https://github.com/polybar/polybar"
+url="https://github.com/polybar/polybar"
 license="MIT"
-depends="cairo xcb-util-image xcb-util-wm xcb-util-xrm xcb-util-cursor alsa-lib libpulse libmpdclient libnl jsoncpp curl"
+depends="cairo xcb-util-image xcb-util-wm xcb-util-xrm xcb-util-cursor alsa-lib libpulse libmpdclient libnl jsoncpp curl cairo-fc"
 optdepends="i3-wm ttf-unifont siji-git xorg-fonts-mics"
 makedepends="cmake git python python2 pkg-config i3-wm"
 conflicts="polybar-git"
@@ -16,6 +16,8 @@ sourcetype="compressed"
 pkgdir="$tmpdir/$package/content"
 
 shoppepkg_build() {
+  get_source
+  cd source
   mkdir -p "${pkgname}/build"
   cd "${pkgname}/build" || exit 1
   cmake -DCMAKE_INSTALL_PREFIX=/usr ..
