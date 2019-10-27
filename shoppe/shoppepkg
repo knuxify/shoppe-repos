@@ -3,7 +3,7 @@
 # Basic information
 pkgname="shoppe"
 pkgdesc="A portable package manager that integrates with most distros"
-pkgver="v1.2.1"
+pkgver="v1.3.0"
 pkgarch="all"
 pkgrel="0"
 license="MIT"
