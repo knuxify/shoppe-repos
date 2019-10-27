@@ -1,8 +1,7 @@
 pkgname=polybar
 pkgver=3.4.0
-pkgrel=2
 pkgdesc="A fast and easy-to-use status bar"
-arch="i686 x86_64"
+pkgarch="i686 x86_64"
 url="https://github.com/polybar/polybar"
 license="MIT"
 depends="cairo xcb-util-image xcb-util-wm xcb-util-xrm xcb-util-cursor alsa-lib libpulse libmpdclient libnl jsoncpp curl"
@@ -22,6 +21,9 @@ shoppepkg_build() {
   cd "${pkgname}/build" || exit 1
   cmake -DCMAKE_INSTALL_PREFIX=/usr ..
   cmake --build .
-  cmake --build "${pkgname}/build" --target install -- DESTDIR="${pkgdir}"
-  install -Dm644 "${pkgname}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  cmake --build . --target install -- DESTDIR="${pkgdir}"
+  cd ../
+  install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
+content_x86_64_checksum='4b59ec4947881776bec13594c45c75f240ff19ce38e8c306be70b3e446a5ce7f5ea3e1f397af2735a9b83b2313821024aafbd8b3494adc40b9d4cf9899b96e48  content-x86_64.tar.gz'
+pkgrel='2'
